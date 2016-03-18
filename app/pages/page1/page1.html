@@ -1,0 +1,24 @@
+<ion-navbar  primary *navbar>
+  <ion-title>Malifiesta</ion-title>
+</ion-navbar>
+
+<ion-content class="page1">
+<ion-searchbar  [(ngModel)]="searchQuery" (input)="getItems($event)"></ion-searchbar>
+<ion-list>
+  <ion-item-sliding *ngFor="#item of items">
+    <button ion-item (click)="goTo(item)">
+      <ion-avatar item-left>
+        <img src="{{item.foto}}">
+      </ion-avatar>
+      <h2>{{item.nome}}</h2>
+      <p>Fecha {{item.idade}} Otro Dato: {{item.fecha}}     <button danger>{{ item.estadop}} </button></p>
+
+    </button>
+    <ion-item-options>
+      <button danger><ion-icon ios="ios-trash" md="md-trash"></ion-icon>Borrar</button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
+
+  
+</ion-content>
